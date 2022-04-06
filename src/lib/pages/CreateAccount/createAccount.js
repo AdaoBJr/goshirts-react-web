@@ -1,5 +1,5 @@
 import React from 'react';
-import defaultClasses from './createAccount.modules.css';
+import defaultClasses from './createAccount.module.css';
 import { mergeClasses } from '@goshirts-react/lib';
 
 const CreateAccount = (props) => {
