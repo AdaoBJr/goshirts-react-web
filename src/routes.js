@@ -4,13 +4,13 @@ import { Routes, Route } from 'react-router-dom';
 import CreateAccount from './lib/pages/CreateAccount';
 import SignIn from './lib/pages/SignIn';
 
-function MainRoutes() {
+function Router() {
   return (
     <Routes>
-      <Route path="/create-account" element={<CreateAccount />} />
-      <Route path="/sign-in" element={<SignIn />} />
+      <Route path="/register" element={<CreateAccount />} />
+      <Route path="/login" element={<SignIn />} />
     </Routes>
   );
 }
 
-export default MainRoutes;
+export default Router;
