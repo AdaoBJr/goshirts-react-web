@@ -1,12 +1,5 @@
-import { Button, mergeClasses } from '@goshirts-react/lib';
-import defaultClasses from './App.module.css';
+import Routes from './routes';
 
-const { useStyles } = mergeClasses();
-
-const App = (props) => {
-  const classes = useStyles(defaultClasses, props.classes);
-
-  return <Button classes={{ default: classes.buttonBuy }}>CLICK AQUI</Button>;
-};
+const App = () => <Routes />;
 
 export default App;
