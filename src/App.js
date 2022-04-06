@@ -1,8 +1,12 @@
-import './App.css';
-import { Button } from '@goshirts-react/lib';
+import { Button, mergeClasses } from '@goshirts-react/lib';
+import defaultClasses from './App.module.css';
 
-function App() {
-  return <Button>CLICK AQUI</Button>;
-}
+const { useStyles } = mergeClasses();
+
+const App = (props) => {
+  const classes = useStyles(defaultClasses, props.classes);
+
+  return <Button classes={{ default: classes.buttonBuy }}>CLICK AQUI</Button>;
+};
 
 export default App;
