@@ -3,8 +3,8 @@ import defaultClasses from './createAccount.module.css';
 import { mergeClasses } from '@goshirts-react/lib';
 
 const CreateAccount = (props) => {
-  const { useStyles } = mergeClasses();
-  const classes = useStyles(defaultClasses, props.classes);
+  const { useStyle } = mergeClasses();
+  const classes = useStyle(defaultClasses, props.classes);
 
   return <h1 className={classes.root}>CreateAccount</h1>;
 };
