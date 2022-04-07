@@ -7,7 +7,7 @@ import SignIn from './lib/pages/SignIn';
 function Router() {
   return (
     <Routes>
-      <Route path="/register" element={<CreateAccount />} />
+      <Route path="/create-account" element={<CreateAccount />} />
       <Route path="/login" element={<SignIn />} />
     </Routes>
   );
