@@ -1,12 +1,21 @@
 import React from 'react';
 import defaultClasses from './createAccount.module.css';
-import { mergeClasses } from '@goshirts-react/lib';
+import { InputText, useStyle } from '@goshirts-react/lib';
 
 const CreateAccount = (props) => {
-  const { useStyle } = mergeClasses();
   const classes = useStyle(defaultClasses, props.classes);
 
-  return <h1 className={classes.root}>CreateAccount</h1>;
+  return (
+    <>
+      <h1 className={classes.root}>CreateAccount</h1>
+      <InputText
+        label="Primeiro Nome"
+        name="firstname"
+        placeholder="Insira seu primeiro nome"
+        classes={{ input: classes.createAccountInput }}
+      />
+    </>
+  );
 };
 
 export default CreateAccount;
