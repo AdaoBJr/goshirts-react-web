@@ -14,17 +14,9 @@ const CreateAccount = (props) => {
     <div className={classes.root}>
       <div className={classes.wrapper}>
         <h1 className={classes.title}>Cadastrar</h1>
-        <InputText
-          label="Nome*"
-          name="firstname"
-          classes={{ input: classes.createAccountInput }}
-        />
-        <InputText
-          label="Sobrenome*"
-          name="lastname"
-          classes={{ input: classes.createAccountInput }}
-        />
-        <Dropdown items={items} />
+        <InputText id="firstname" name="firstname" label="Nome*" autoComplete="off" />
+        <InputText id="lastname" name="lastname" label="Sobrenome*" autoComplete="off" />
+        <Dropdown label="Gênero*" items={items} />
       </div>
     </div>
   );
