@@ -8,7 +8,11 @@ const useCreateAccount = () => {
     setInput((prevState) => ({ ...prevState, [name]: value }))
   );
 
-  return { handleChange, inputData: input };
+  const onValueChange = useCallback(({ id, itemActive }) =>
+    setInput((prevState) => ({ ...prevState, [id]: itemActive }))
+  );
+
+  return { handleChange, onValueChange, inputData: input };
 };
 
 export default useCreateAccount;
