@@ -1,6 +1,11 @@
 import React from 'react';
 import defaultClasses from './createAccount.module.css';
-import { InputText, useStyle } from '@goshirts-react/lib';
+import { InputText, Dropdown, useStyle } from '@goshirts-react/lib';
+
+const items = [
+  { key: 1, label: 'Masculino', value: 0 },
+  { key: 2, label: 'Feminino', value: 1 },
+];
 
 const CreateAccount = (props) => {
   const classes = useStyle(defaultClasses, props.classes);
@@ -8,19 +13,18 @@ const CreateAccount = (props) => {
   return (
     <div className={classes.root}>
       <div className={classes.wrapper}>
-        <h1 className={classes.title}>CreateAccount</h1>
+        <h1 className={classes.title}>Cadastrar</h1>
         <InputText
-          label="Nome"
+          label="Nome*"
           name="firstname"
-          placeholder="Insira seu nome"
           classes={{ input: classes.createAccountInput }}
         />
         <InputText
-          label="Sobrenome"
+          label="Sobrenome*"
           name="lastname"
-          placeholder="Insira seu sobrenome"
           classes={{ input: classes.createAccountInput }}
         />
+        <Dropdown items={items} />
       </div>
     </div>
   );
