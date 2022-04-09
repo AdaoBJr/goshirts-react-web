@@ -35,12 +35,21 @@ const CreateAccount = (props) => {
           autoComplete="off"
           onBlur={handleChange}
         />
-        <Dropdown
-          id="gender"
-          label="Gênero*"
-          items={items}
-          onValueChange={onValueChange}
-        />
+        <div className={classes.genderBirth}>
+          <Dropdown
+            id="gender"
+            label="Gênero*"
+            items={items}
+            onValueChange={onValueChange}
+          />
+          <InputText
+            id="birthOfDate"
+            name="birthOfDate"
+            label="Data de Nascimento*"
+            autoComplete="off"
+            onBlur={handleChange}
+          />
+        </div>
       </div>
     </div>
   );
