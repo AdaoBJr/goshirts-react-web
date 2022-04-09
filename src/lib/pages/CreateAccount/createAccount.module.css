@@ -40,3 +40,28 @@
   align-items: flex-start;
   column-gap: 0.5rem;
 }
+
+.checkNewsletter {
+  composes: root from '@goshirts-react/lib/components/InputText/inputText.module.css';
+  grid-template-columns: 20px 1fr;
+}
+
+.label {
+  composes: label from '@goshirts-react/lib/components/InputText/inputText.module.css';
+  order: 1;
+}
+
+.input {
+  composes: input from '@goshirts-react/lib/components/InputText/inputText.module.css';
+  order: 0;
+}
+
+.textVisible {
+  composes: textVisible from '@goshirts-react/lib/components/InputText/inputText.module.css';
+  order: 2;
+}
+
+.textInvisible {
+  composes: textInvisible from '@goshirts-react/lib/components/InputText/inputText.module.css';
+  order: 3;
+}

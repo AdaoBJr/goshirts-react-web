@@ -31,6 +31,7 @@ const CreateAccount = (props) => {
         <h1 className={classes.title}>Cadastrar</h1>
         <InputText
           id="firstname"
+          type="text"
           name="firstname"
           label="Nome*"
           autoComplete="off"
@@ -38,6 +39,7 @@ const CreateAccount = (props) => {
         />
         <InputText
           id="lastname"
+          type="text"
           name="lastname"
           label="Sobrenome*"
           autoComplete="off"
@@ -52,6 +54,7 @@ const CreateAccount = (props) => {
           />
           <InputText
             id="birthOfDate"
+            type="text"
             name="birthOfDate"
             label="Data de Nascimento*"
             autoComplete="off"
@@ -71,6 +74,7 @@ const CreateAccount = (props) => {
         <div className={classes.cpfPhone}>
           <InputText
             id="CPF"
+            type="text"
             name="CPF"
             label="CPF*"
             autoComplete="off"
@@ -78,12 +82,52 @@ const CreateAccount = (props) => {
           />
           <InputText
             id="phone"
+            type="text"
             name="phone"
             label="Telefone Celular*"
             autoComplete="off"
             onBlur={handleChange}
           />
         </div>
+        <InputText
+          id="email"
+          type="e-mail"
+          name="email"
+          label="E-mail*"
+          autoComplete="off"
+          onBlur={handleChange}
+        />
+        <InputText
+          id="newsletter"
+          type="checkbox"
+          name="newsletter"
+          label="Quero receber a newsletter"
+          autoComplete="off"
+          classes={{
+            root: classes.checkNewsletter,
+            label: classes.label,
+            input: classes.input,
+            textVisible: classes.textVisible,
+            textInvisible: classes.textInvisible,
+          }}
+          onChange={handleChange}
+        />
+        <InputText
+          id="password"
+          type="password"
+          name="password"
+          label="Senha*"
+          autoComplete="off"
+          onBlur={handleChange}
+        />
+        <InputText
+          id="confirm_password"
+          type="password"
+          name="confirm_password"
+          label="Confirme senha*"
+          autoComplete="off"
+          onBlur={handleChange}
+        />
       </div>
     </div>
   );
