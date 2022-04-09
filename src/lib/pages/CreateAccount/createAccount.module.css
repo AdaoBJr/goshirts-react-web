@@ -23,3 +23,20 @@
   align-items: flex-start;
   column-gap: 0.5rem;
 }
+
+.dropCountryItems {
+  composes: items from '@goshirts-react/lib/components/Dropdown/dropdown.module.css';
+  width: 99%;
+}
+
+.dropCountryItemsActive {
+  composes: itemsActive from '@goshirts-react/lib/components/Dropdown/dropdown.module.css';
+  height: 305%;
+}
+
+.cpfPhone {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+  column-gap: 0.5rem;
+}

@@ -5,9 +5,17 @@ import { InputText, Dropdown, useStyle } from '@goshirts-react/lib';
 
 import { useCreateAccount } from '../../services/talons';
 
-const items = [
+const gender = [
   { key: 1, label: 'Masculino', value: 0 },
   { key: 2, label: 'Feminino', value: 1 },
+];
+
+const country = [
+  { key: 1, label: 'Brasil', value: 1 },
+  { key: 2, label: 'Chile', value: 2 },
+  { key: 3, label: 'Espanha', value: 3 },
+  { key: 4, label: 'Estados Unidos', value: 4 },
+  { key: 5, label: 'Inglaterra', value: 5 },
 ];
 
 const CreateAccount = (props) => {
@@ -39,13 +47,39 @@ const CreateAccount = (props) => {
           <Dropdown
             id="gender"
             label="Gênero*"
-            items={items}
+            items={gender}
             onValueChange={onValueChange}
           />
           <InputText
             id="birthOfDate"
             name="birthOfDate"
             label="Data de Nascimento*"
+            autoComplete="off"
+            onBlur={handleChange}
+          />
+        </div>
+        <Dropdown
+          id="country"
+          label="País*"
+          items={country}
+          onValueChange={onValueChange}
+          classes={{
+            items: classes.dropCountryItems,
+            itemsActive: classes.dropCountryItemsActive,
+          }}
+        />
+        <div className={classes.cpfPhone}>
+          <InputText
+            id="CPF"
+            name="CPF"
+            label="CPF*"
+            autoComplete="off"
+            onBlur={handleChange}
+          />
+          <InputText
+            id="phone"
+            name="phone"
+            label="Telefone Celular*"
             autoComplete="off"
             onBlur={handleChange}
           />
