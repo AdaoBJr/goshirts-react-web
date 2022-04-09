@@ -11,11 +11,11 @@ const gender = [
 ];
 
 const country = [
-  { key: 1, label: 'Brasil', value: 1 },
-  { key: 2, label: 'Chile', value: 2 },
-  { key: 3, label: 'Espanha', value: 3 },
-  { key: 4, label: 'Estados Unidos', value: 4 },
-  { key: 5, label: 'Inglaterra', value: 5 },
+  { key: 1, label: 'Brasil', value: 'Brasil' },
+  { key: 2, label: 'Chile', value: 'Chile' },
+  { key: 3, label: 'Espanha', value: 'Espanha' },
+  { key: 4, label: 'Estados Unidos', value: 'Estados Unidos' },
+  { key: 5, label: 'Inglaterra', value: 'Inglaterra' },
 ];
 
 const CreateAccount = (props) => {
