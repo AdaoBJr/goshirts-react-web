@@ -4,8 +4,8 @@ const useCreateAccount = () => {
   const initial = {};
   const [input, setInput] = useState(initial);
 
-  const handleChange = useCallback(({ target: { value, name } }) =>
-    setInput((prevState) => ({ ...prevState, [name]: value }))
+  const handleChange = useCallback(({ target: { checked, value, name } }) =>
+    setInput((prevState) => ({ ...prevState, [name]: checked || value }))
   );
 
   const onValueChange = useCallback(({ id, itemActive }) =>
