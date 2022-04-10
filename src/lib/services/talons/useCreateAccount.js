@@ -12,7 +12,12 @@ const useCreateAccount = () => {
     setInput((prevState) => ({ ...prevState, [id]: itemActive }))
   );
 
-  return { handleChange, onValueChange, inputData: input };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target);
+  };
+
+  return { handleChange, handleSubmit, onValueChange, inputData: input };
 };
 
 export default useCreateAccount;
