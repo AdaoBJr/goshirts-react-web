@@ -10,10 +10,11 @@ const useCreateAccount = () => {
     setInputData((prevState) => ({ ...prevState, [name]: checked || value }))
   );
 
-  const handleClickPwd = useCallback(({ target: { id } }) => {
-    console.log(`ID`, id);
-    setActivePwdIcon((prevState) => ({ ...prevState, [id]: true }));
-  });
+  const handleClickPwd = useCallback(
+    ({ target: { id } }) =>
+      setActivePwdIcon((prevState) => ({ ...prevState, [id]: !prevState[id] })),
+    [setActivePwdIcon]
+  );
 
   const onValueChange = useCallback(({ id, itemActive }) =>
     setInputData((prevState) => ({ ...prevState, [id]: itemActive }))
