@@ -30,16 +30,8 @@ const country = [
 const CreateAccount = (props) => {
   const classes = useStyle(defaultClasses, props.classes);
 
-  const {
-    handleChange,
-    handleSubmit,
-    handleClickPwd,
-    onValueChange,
-    inputData,
-    activePwdIcon,
-  } = useCreateAccount();
-
-  console.log(activePwdIcon);
+  const { handleChange, handleSubmit, handleClickPwd, onValueChange, activePwdIcon } =
+    useCreateAccount();
 
   return (
     <div className={classes.root}>
@@ -145,19 +137,34 @@ const CreateAccount = (props) => {
                   id="password"
                   onClick={handleClickPwd}
                   icon={activePwdIcon.password ? VisibilityOff : Visibility}
+                  size={28}
                   classes={{ icon: classes.iconPassword }}
                 />
               </div>
             </div>
           </div>
-          <InputText
-            id="confirm_password"
-            type="password"
-            name="confirm_password"
-            label="Confirme senha*"
-            autoComplete="off"
-            onBlur={handleChange}
-          />
+          <div className={classes.passwordContainer}>
+            <Label id="password_confirm" label="Confirme senha*" />
+            <div className={classes.passwordContent}>
+              <InputText
+                id="password_confirm"
+                type="password"
+                name="password_confirm"
+                autoComplete="off"
+                classes={{ root: classes.rootPassword, input: classes.inputPassword }}
+                onBlur={handleChange}
+              />
+              <div className={classes.passwordIcon}>
+                <Icon
+                  id="password_confirm"
+                  onClick={handleClickPwd}
+                  icon={activePwdIcon.password_confirm ? VisibilityOff : Visibility}
+                  size={28}
+                  classes={{ icon: classes.iconPassword }}
+                />
+              </div>
+            </div>
+          </div>
           <Button type="submit" id="register" classes={{ button: classes.buttonSubmit }}>
             Cadastre-se
           </Button>
