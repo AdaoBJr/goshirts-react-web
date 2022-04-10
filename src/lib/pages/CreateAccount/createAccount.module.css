@@ -99,11 +99,16 @@
 
 .passwordIcon {
   margin: 0 0.75rem;
-  cursor: pointer;
 }
 
 .iconPassword {
+  width: 100%;
   color: rgb(223, 225, 226);
+  cursor: pointer;
+}
+
+.iconPassword:hover {
+  color: rgb(223, 225, 226, 0.5);
 }
 
 .buttonSubmit {
