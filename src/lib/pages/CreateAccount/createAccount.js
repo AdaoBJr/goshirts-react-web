@@ -1,7 +1,8 @@
 import React from 'react';
+import { Visibility } from '@material-ui/icons';
 
 import defaultClasses from './createAccount.module.css';
-import { InputText, Dropdown, useStyle, Button } from '@goshirts-react/lib';
+import { InputText, Dropdown, useStyle, Button, Icon, Label } from '@goshirts-react/lib';
 
 import { useCreateAccount } from '../../services/talons';
 
@@ -106,21 +107,29 @@ const CreateAccount = (props) => {
             autoComplete="off"
             classes={{
               root: classes.checkNewsletter,
-              label: classes.label,
-              input: classes.input,
-              textVisible: classes.textVisible,
-              textInvisible: classes.textInvisible,
+              label: classes.checkNewsletterLabel,
+              input: classes.checkNewsletterInput,
+              textVisible: classes.checkNewsletterTextVisible,
+              textInvisible: classes.checkNewsletterTextInvisible,
             }}
             onChange={handleChange}
           />
-          <InputText
-            id="password"
-            type="password"
-            name="password"
-            label="Senha*"
-            autoComplete="off"
-            onBlur={handleChange}
-          />
+          <div className={classes.passwordContainer}>
+            <Label id="password" label="Senha*" />
+            <div className={classes.passwordContent}>
+              <InputText
+                id="password"
+                type="password"
+                name="password"
+                autoComplete="off"
+                classes={{ root: classes.rootPassword, input: classes.inputPassword }}
+                onBlur={handleChange}
+              />
+              <span className={classes.passwordIcon}>
+                <Icon icon={Visibility} />
+              </span>
+            </div>
+          </div>
           <InputText
             id="confirm_password"
             type="password"

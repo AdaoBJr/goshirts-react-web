@@ -49,24 +49,52 @@
   grid-template-columns: 20px 1fr;
 }
 
-.label {
+.checkNewsletterLabel {
   composes: label from '@goshirts-react/lib/components/InputText/inputText.module.css';
   order: 1;
 }
 
-.input {
+.checkNewsletterInput {
   composes: input from '@goshirts-react/lib/components/InputText/inputText.module.css';
   order: 0;
 }
 
-.textVisible {
+.checkNewsletterTextVisible {
   composes: textVisible from '@goshirts-react/lib/components/InputText/inputText.module.css';
   order: 2;
 }
 
-.textInvisible {
+.checkNewsletterTextInvisible {
   composes: textInvisible from '@goshirts-react/lib/components/InputText/inputText.module.css';
   order: 3;
+}
+
+.passwordContainer {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.passwordContent {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border: 2px solid rgb(223, 225, 226);
+  border-radius: 4px;
+}
+
+.rootPassword {
+  composes: root from '@goshirts-react/lib/components/InputText/inputText.module.css';
+  gap: 0;
+}
+
+.inputPassword {
+  composes: input from '@goshirts-react/lib/components/InputText/inputText.module.css';
+  border: none;
+  gap: none;
+}
+
+.passwordIcon {
+  margin: 0 0.75rem;
 }
 
 .buttonSubmit {
