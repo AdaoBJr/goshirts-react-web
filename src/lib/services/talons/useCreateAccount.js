@@ -2,22 +2,22 @@ import { useCallback, useState } from 'react';
 
 const useCreateAccount = () => {
   const initial = {};
-  const [input, setInput] = useState(initial);
+  const [inputData, setInputData] = useState(initial);
 
   const handleChange = useCallback(({ target: { checked, value, name } }) =>
-    setInput((prevState) => ({ ...prevState, [name]: checked || value }))
+    setInputData((prevState) => ({ ...prevState, [name]: checked || value }))
   );
 
   const onValueChange = useCallback(({ id, itemActive }) =>
-    setInput((prevState) => ({ ...prevState, [id]: itemActive }))
+    setInputData((prevState) => ({ ...prevState, [id]: itemActive }))
   );
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(e.target);
+    console.log('enviando os dados', inputData);
   };
 
-  return { handleChange, handleSubmit, onValueChange, inputData: input };
+  return { handleChange, handleSubmit, onValueChange, inputData };
 };
 
 export default useCreateAccount;
