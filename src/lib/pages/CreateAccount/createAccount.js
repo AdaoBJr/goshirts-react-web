@@ -1,5 +1,5 @@
 import React from 'react';
-import { Visibility } from '@material-ui/icons';
+import { Visibility, VisibilityOff } from '@material-ui/icons';
 
 import defaultClasses from './createAccount.module.css';
 import {
@@ -30,9 +30,16 @@ const country = [
 const CreateAccount = (props) => {
   const classes = useStyle(defaultClasses, props.classes);
 
-  const { handleChange, handleSubmit, onValueChange, inputData } = useCreateAccount();
+  const {
+    handleChange,
+    handleSubmit,
+    handleClickPwd,
+    onValueChange,
+    inputData,
+    activePwdIcon,
+  } = useCreateAccount();
 
-  console.log(inputData);
+  console.log(activePwdIcon);
 
   return (
     <div className={classes.root}>
@@ -133,9 +140,14 @@ const CreateAccount = (props) => {
                 classes={{ root: classes.rootPassword, input: classes.inputPassword }}
                 onBlur={handleChange}
               />
-              <span className={classes.passwordIcon}>
-                <Icon icon={Visibility} />
-              </span>
+              <div className={classes.passwordIcon}>
+                <Icon
+                  id="password"
+                  onClick={handleClickPwd}
+                  icon={activePwdIcon.password ? VisibilityOff : Visibility}
+                  classes={{ icon: classes.iconPassword }}
+                />
+              </div>
             </div>
           </div>
           <InputText

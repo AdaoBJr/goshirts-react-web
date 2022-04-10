@@ -95,6 +95,11 @@
 
 .passwordIcon {
   margin: 0 0.75rem;
+  cursor: pointer;
+}
+
+.iconPassword {
+  color: rgb(223, 225, 226);
 }
 
 .buttonSubmit {
