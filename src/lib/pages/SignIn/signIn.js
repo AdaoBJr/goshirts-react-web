@@ -8,7 +8,7 @@ const SignIn = (props) => {
   return (
     <>
       <h1 className={classes.root}>LOGIN</h1>
-      <Button classes={{ defaultStyles: classes.buttonEnter }}>ENTRAR</Button>
+      <Button classes={{ button: classes.buttonEnter }}>ENTRAR</Button>
     </>
   );
 };

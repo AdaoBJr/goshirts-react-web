@@ -1,16 +1,19 @@
-/* @import url(@goshirts-react/lib/components/Button/button.module.css); */
-
 .root {
   border-radius: 3px;
   box-shadow: 0 2px 10px rgba(35, 0, 77, 0.2);
 }
 
 .buttonEnter {
-  composes: defaultStyles from '@goshirts-react/lib/components/Button/button.module.css';
+  composes: button from '@goshirts-react/lib/components/Button/button.module.css';
   padding: 0.5rem 1rem;
 }
 
 .buttonEnter:hover {
-  box-shadow: 0 2px 10px rgba(35, 0, 77, 0.858);
+  background-color: rgba(170, 191, 184, 0.7);
+  transition: 0.5s;
+}
+
+.buttonEnter:disabled {
+  background-color: rgb(233, 233, 233);
   transition: 0.5s;
 }
