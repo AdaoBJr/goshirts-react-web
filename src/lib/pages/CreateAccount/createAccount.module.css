@@ -9,12 +9,15 @@
 }
 
 .wrapper {
-  display: grid;
-  gap: 1rem;
   padding: 1rem 1.5rem;
   min-width: 400px;
   border-radius: 3px;
   box-shadow: 0 2px 10px rgba(35, 0, 77, 0.2);
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
 }
 
 .genderBirth {
@@ -64,4 +67,24 @@
 .textInvisible {
   composes: textInvisible from '@goshirts-react/lib/components/InputText/inputText.module.css';
   order: 3;
+}
+
+.buttonSubmit {
+  composes: button from '@goshirts-react/lib/components/Button/button.module.css';
+  text-transform: uppercase;
+  width: 100%;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 0.6rem 1rem;
+}
+
+.buttonSubmit:hover {
+  background-color: rgba(170, 191, 184, 0.7);
+  transition: 0.5s;
+}
+
+.buttonSubmit:disabled {
+  background-color: rgb(233, 233, 233);
+  cursor: default;
+  transition: 0.5s;
 }
