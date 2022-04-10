@@ -2,7 +2,15 @@ import React from 'react';
 import { Visibility } from '@material-ui/icons';
 
 import defaultClasses from './createAccount.module.css';
-import { InputText, Dropdown, useStyle, Button, Icon, Label } from '@goshirts-react/lib';
+import {
+  InputText,
+  Dropdown,
+  useStyle,
+  Button,
+  Icon,
+  Label,
+  Form,
+} from '@goshirts-react/lib';
 
 import { useCreateAccount } from '../../services/talons';
 
@@ -30,7 +38,7 @@ const CreateAccount = (props) => {
     <div className={classes.root}>
       <div className={classes.wrapper}>
         <h1 className={classes.title}>Cadastrar</h1>
-        <form onSubmit={handleSubmit} className={classes.form}>
+        <Form onSubmit={handleSubmit} classes={{ form: classes.form }}>
           <InputText
             id="firstname"
             type="text"
@@ -141,7 +149,7 @@ const CreateAccount = (props) => {
           <Button type="submit" id="register" classes={{ button: classes.buttonSubmit }}>
             Cadastre-se
           </Button>
-        </form>
+        </Form>
       </div>
     </div>
   );
