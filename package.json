@@ -21,6 +21,7 @@
   },
   "scripts": {
     "dev": "craco start",
+    "gen": "eval $(grep '^GEN' .env)",
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject"
