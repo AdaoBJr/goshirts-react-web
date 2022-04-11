@@ -6,8 +6,10 @@ const useCreateAccount = () => {
   const initialPwd = { password: false, password_confirm: false };
   const [activePwdIcon, setActivePwdIcon] = useState(initialPwd);
 
-  const handleChange = useCallback(({ target: { checked, value, name } }) =>
-    setInputData((prevState) => ({ ...prevState, [name]: checked || value }))
+  const handleChange = useCallback(
+    ({ target: { checked, value, name } }) =>
+      setInputData((prevState) => ({ ...prevState, [name]: checked || value })),
+    [setInputData]
   );
 
   const handleClickPwd = useCallback(
@@ -16,8 +18,10 @@ const useCreateAccount = () => {
     [setActivePwdIcon]
   );
 
-  const onValueChange = useCallback(({ id, itemActive }) =>
-    setInputData((prevState) => ({ ...prevState, [id]: itemActive }))
+  const onValueChange = useCallback(
+    ({ id, itemActive }) =>
+      setInputData((prevState) => ({ ...prevState, [id]: itemActive })),
+    [setInputData]
   );
 
   const handleSubmit = (e) => {
