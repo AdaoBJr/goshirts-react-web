@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# genql
+/generated
+
 # production
 /build
 
