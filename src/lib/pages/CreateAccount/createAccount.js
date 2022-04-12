@@ -9,14 +9,14 @@ import {
   Button,
   Icon,
   Label,
-  Form,
+  Form
 } from '@goshirts-react/lib';
 
 import { useCreateAccount } from '../../services/talons';
 
 const gender = [
   { key: 1, label: 'Masculino', value: 0 },
-  { key: 2, label: 'Feminino', value: 1 },
+  { key: 2, label: 'Feminino', value: 1 }
 ];
 
 const country = [
@@ -24,14 +24,19 @@ const country = [
   { key: 2, label: 'Chile', value: 'Chile' },
   { key: 3, label: 'Espanha', value: 'Espanha' },
   { key: 4, label: 'Estados Unidos', value: 'Estados Unidos' },
-  { key: 5, label: 'Inglaterra', value: 'Inglaterra' },
+  { key: 5, label: 'Inglaterra', value: 'Inglaterra' }
 ];
 
-const CreateAccount = (props) => {
+const CreateAccount = props => {
   const classes = useStyle(defaultClasses, props.classes);
 
-  const { handleChange, handleSubmit, handleClickPwd, onValueChange, activePwdIcon } =
-    useCreateAccount();
+  const {
+    handleChange,
+    handleSubmit,
+    handleClickPwd,
+    onValueChange,
+    activePwdIcon
+  } = useCreateAccount();
 
   return (
     <div className={classes.root}>
@@ -62,9 +67,9 @@ const CreateAccount = (props) => {
               onValueChange={onValueChange}
             />
             <InputText
-              id="birthOfDate"
+              id="dateOfBirth"
               type="text"
-              name="birthOfDate"
+              name="dateOfBirth"
               label="Data de Nascimento*"
               autoComplete="off"
               onBlur={handleChange}
@@ -77,22 +82,22 @@ const CreateAccount = (props) => {
             onValueChange={onValueChange}
             classes={{
               items: classes.dropCountryItems,
-              itemsActive: classes.dropCountryItemsActive,
+              itemsActive: classes.dropCountryItemsActive
             }}
           />
           <div className={classes.cpfPhone}>
             <InputText
-              id="CPF"
+              id="cpf"
               type="text"
-              name="CPF"
+              name="cpf"
               label="CPF*"
               autoComplete="off"
               onBlur={handleChange}
             />
             <InputText
-              id="phone"
+              id="telephone"
               type="text"
-              name="phone"
+              name="telephone"
               label="Telefone Celular*"
               autoComplete="off"
               onBlur={handleChange}
@@ -109,7 +114,7 @@ const CreateAccount = (props) => {
           <InputText
             id="newsletter"
             type="checkbox"
-            name="newsletter"
+            name="subscribe"
             label="Quero receber a newsletter"
             autoComplete="off"
             classes={{
@@ -117,7 +122,7 @@ const CreateAccount = (props) => {
               label: classes.checkNewsletterLabel,
               input: classes.checkNewsletterInput,
               textVisible: classes.checkNewsletterTextVisible,
-              textInvisible: classes.checkNewsletterTextInvisible,
+              textInvisible: classes.checkNewsletterTextInvisible
             }}
             onChange={handleChange}
           />
