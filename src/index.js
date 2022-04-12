@@ -9,12 +9,12 @@ import {
   ApolloClient,
   createHttpLink,
   InMemoryCache,
-  ApolloProvider,
+  ApolloProvider
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
-  uri: process.env.REACT_APP_HASURA_URL,
+  uri: process.env.REACT_APP_HASURA_URL
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -22,22 +22,24 @@ const authLink = setContext((_, { headers }) => {
   return {
     headers: {
       ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
+      authorization: token ? `Bearer ${token}` : ''
+    }
   };
 });
 
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
+  cache: new InMemoryCache()
 });
 
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
-  <ApolloProvider client={client}>
-    <Router>
-      <App />
-    </Router>
-  </ApolloProvider>
+  <React.StrictMode>
+    <ApolloProvider client={client}>
+      <Router>
+        <App />
+      </Router>
+    </ApolloProvider>
+  </React.StrictMode>
 );
