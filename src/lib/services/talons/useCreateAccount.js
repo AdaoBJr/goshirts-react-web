@@ -1,4 +1,6 @@
 import { useCallback, useState } from 'react';
+import { useMutation, gql } from '@apollo/client';
+import { createCustomerGQL } from '../../../gql/customer';
 
 const useCreateAccount = () => {
   const initialData = {};
@@ -6,27 +8,38 @@ const useCreateAccount = () => {
   const initialPwd = { password: false, password_confirm: false };
   const [activePwdIcon, setActivePwdIcon] = useState(initialPwd);
 
+  const { query, variables } = createCustomerGQL({ data: inputData });
+
+  const [createCustomer] = useMutation(gql(query));
+
   const handleChange = useCallback(
     ({ target: { checked, value, name } }) =>
-      setInputData((prevState) => ({ ...prevState, [name]: checked || value })),
+      setInputData(prevState => ({ ...prevState, [name]: checked || value })),
     [setInputData]
   );
 
   const handleClickPwd = useCallback(
     ({ target: { id } }) =>
-      setActivePwdIcon((prevState) => ({ ...prevState, [id]: !prevState[id] })),
+      setActivePwdIcon(prevState => ({ ...prevState, [id]: !prevState[id] })),
     [setActivePwdIcon]
   );
 
   const onValueChange = useCallback(
     ({ id, itemActive }) =>
-      setInputData((prevState) => ({ ...prevState, [id]: itemActive })),
+      setInputData(prevState => ({ ...prevState, [id]: itemActive })),
     [setInputData]
   );
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
-    console.log('enviando os dados', inputData);
+    delete inputData.password_confirm;
+
+    try {
+      const response = await createCustomer({ variables });
+      console.log('response', response);
+    } catch (error) {
+      console.log(`Unexpect Error on Mutation ${error}`);
+    }
   };
 
   return {
@@ -35,7 +48,7 @@ const useCreateAccount = () => {
     handleClickPwd,
     onValueChange,
     inputData,
-    activePwdIcon,
+    activePwdIcon
   };
 };
 
