@@ -53,13 +53,9 @@ const SignIn = props => {
           <Button type="submit" id="login" classes={{ button: classes.buttonSubmit }}>
             Entrar
           </Button>
-          <Button
-            type="button"
-            id="register"
-            classes={{ button: classes.buttonRegister }}
-          >
+          <Link to="/create-account" className={classes.buttonRegister}>
             Cadastre-se
-          </Button>
+          </Link>
         </Form>
       </div>
     </div>

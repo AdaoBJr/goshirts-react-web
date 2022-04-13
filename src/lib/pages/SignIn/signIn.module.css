@@ -105,8 +105,9 @@
   composes: button from '@goshirts-react/lib/components/Button/button.module.css';
   font-size: 0.8rem;
   text-transform: uppercase;
-  width: 100%;
+  text-align: center;
   color: rgb(43, 43, 43);
+  text-decoration: none;
   background-color: transparent;
   border: 2px solid rgb(170, 191, 184);
   font-weight: 700;
