@@ -132,7 +132,7 @@ const CreateAccount = props => {
             <div className={classes.passwordContent}>
               <InputText
                 id="password"
-                type="password"
+                type={activePwdIcon.password ? 'text' : 'password'}
                 name="password"
                 autoComplete="off"
                 classes={{ root: classes.rootPassword, input: classes.inputPassword }}
@@ -154,7 +154,7 @@ const CreateAccount = props => {
             <div className={classes.passwordContent}>
               <InputText
                 id="password_confirm"
-                type="password"
+                type={activePwdIcon.password_confirm ? 'text' : 'password'}
                 name="password_confirm"
                 autoComplete="off"
                 classes={{ root: classes.rootPassword, input: classes.inputPassword }}
