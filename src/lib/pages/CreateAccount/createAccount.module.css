@@ -5,7 +5,9 @@
 }
 
 .title {
+  font-size: 1.5rem;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .wrapper {
@@ -113,6 +115,7 @@
 
 .buttonSubmit {
   composes: button from '@goshirts-react/lib/components/Button/button.module.css';
+  font-size: 0.8rem;
   text-transform: uppercase;
   width: 100%;
   color: rgb(43, 43, 43);
