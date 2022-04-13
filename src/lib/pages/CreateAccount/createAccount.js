@@ -1,5 +1,5 @@
 import React from 'react';
-import { Visibility, VisibilityOff } from '@material-ui/icons';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 import defaultClasses from './createAccount.module.css';
 import {
@@ -141,7 +141,7 @@ const CreateAccount = props => {
                 <Icon
                   id="password"
                   onClick={handleClickPwd}
-                  icon={activePwdIcon.password ? VisibilityOff : Visibility}
+                  icon={activePwdIcon.password ? FiEyeOff : FiEye}
                   size={28}
                   classes={{ icon: classes.iconPassword }}
                 />
@@ -163,7 +163,7 @@ const CreateAccount = props => {
                 <Icon
                   id="password_confirm"
                   onClick={handleClickPwd}
-                  icon={activePwdIcon.password_confirm ? VisibilityOff : Visibility}
+                  icon={activePwdIcon.password_confirm ? FiEyeOff : FiEye}
                   size={28}
                   classes={{ icon: classes.iconPassword }}
                 />
