@@ -9,7 +9,6 @@ const useCreateAccount = () => {
   const [activePwdIcon, setActivePwdIcon] = useState(initialPwd);
 
   const { query, variables } = createCustomerGQL({ data: inputData });
-  console.log('inputData', inputData);
 
   const [createCustomer] = useMutation(gql(query));
 
@@ -41,7 +40,7 @@ const useCreateAccount = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    // delete inputData.password_confirm;
+    delete inputData.password_confirm;
 
     try {
       const response = await createCustomer({ variables });
