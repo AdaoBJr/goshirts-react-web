@@ -9,12 +9,21 @@ const useCreateAccount = () => {
   const [activePwdIcon, setActivePwdIcon] = useState(initialPwd);
 
   const { query, variables } = createCustomerGQL({ data: inputData });
+  console.log('inputData', inputData);
 
   const [createCustomer] = useMutation(gql(query));
 
   const handleChange = useCallback(
-    ({ target: { checked, value, name } }) =>
-      setInputData(prevState => ({ ...prevState, [name]: checked || value })),
+    ({ target: { value, name } }) => {
+      setInputData(prevState => ({ ...prevState, [name]: value }));
+    },
+    [setInputData]
+  );
+
+  const handleCheck = useCallback(
+    ({ target: { checked, name } }) => {
+      setInputData(prevState => ({ ...prevState, [name]: checked }));
+    },
     [setInputData]
   );
 
@@ -32,7 +41,7 @@ const useCreateAccount = () => {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    delete inputData.password_confirm;
+    // delete inputData.password_confirm;
 
     try {
       const response = await createCustomer({ variables });
@@ -44,6 +53,7 @@ const useCreateAccount = () => {
 
   return {
     handleChange,
+    handleCheck,
     handleSubmit,
     handleClickPwd,
     onValueChange,

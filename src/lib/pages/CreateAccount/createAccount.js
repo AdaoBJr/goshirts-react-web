@@ -32,6 +32,7 @@ const CreateAccount = props => {
 
   const {
     handleChange,
+    handleCheck,
     handleSubmit,
     handleClickPwd,
     onValueChange,
@@ -124,7 +125,7 @@ const CreateAccount = props => {
               textVisible: classes.checkNewsletterTextVisible,
               textInvisible: classes.checkNewsletterTextInvisible
             }}
-            onChange={handleChange}
+            onChange={handleCheck}
           />
           <div className={classes.passwordContainer}>
             <Label id="password" label="Senha*" />
