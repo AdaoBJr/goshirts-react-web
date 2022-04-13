@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 import defaultClasses from './signIn.module.css';
@@ -46,8 +47,18 @@ const SignIn = props => {
               </div>
             </div>
           </div>
+          <Link className={classes.forgotPassword} to="/create-account">
+            Esqueceu sua senha? Clique aqui.
+          </Link>
           <Button type="submit" id="login" classes={{ button: classes.buttonSubmit }}>
             Entrar
+          </Button>
+          <Button
+            type="button"
+            id="register"
+            classes={{ button: classes.buttonRegister }}
+          >
+            Cadastre-se
           </Button>
         </Form>
       </div>
